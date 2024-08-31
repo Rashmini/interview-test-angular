@@ -23,7 +23,7 @@ Please enter/replace your details below.
 | Name | Rashmini Naranpanawa |
 | Date | 2024-08-31 |
 | Start Time | 10:30+12:00 |
-| Finish Time |  |
+| Finish Time | 18:30+12:00 |
 
 ## Requirements
 
@@ -62,4 +62,4 @@ Extras for if you have time:
 - [x] Add delete functionality to the frontend
 
 | Start Time | 2024-08-31 10:30:00.000 |
-| Finish Time |  |
+| Finish Time | 2024-08-31 18:30:00.000 |
