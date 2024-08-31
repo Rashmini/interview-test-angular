@@ -47,7 +47,7 @@ You may if you prefer use your preferred frontend technology, if you are unfamil
 > Please ensure that you record your start and finish time (in local time, using ISO timestamps at the bottom of this README).
 
 - [x] Add to the student their average grade and flow it through from the API to the frontend
-- [ ] Add a page to the frontend to allow students to be added
+- [x] Add a page to the frontend to allow students to be added
 - [x] Add an endpoint to the API to allow students to be added
 - [x] Implement the `Add` method of the `IStudentService`
 - [ ] Style the display of the average grade so that it has three colorations:
