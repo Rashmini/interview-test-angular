@@ -20,10 +20,10 @@ We ask that you spend as much of the allotted time to do this test as you can; a
 Please enter/replace your details below.
 | | |
 | - | - |
-| Name | John Smith |
-| Date | 2022-03-21 |
-| Start Time | 00:00+13:00 |
-| Finish Time | 02:15+13:00 |
+| Name | Rashmini Naranpanawa |
+| Date | 2024-08-31 |
+| Start Time | 10:30+12:00 |
+| Finish Time |  |
 
 ## Requirements
 
@@ -46,7 +46,7 @@ You may if you prefer use your preferred frontend technology, if you are unfamil
 > As you complete each item in the list below, please ensure that you mark it off by changing the `[]` to a `[x]`.
 > Please ensure that you record your start and finish time (in local time, using ISO timestamps at the bottom of this README).
 
-- [ ] Add to the student their average grade and flow it through from the API to the frontend
+- [x] Add to the student their average grade and flow it through from the API to the frontend
 - [ ] Add a page to the frontend to allow students to be added
 - [ ] Add an endpoint to the API to allow students to be added
 - [ ] Implement the `Add` method of the `IStudentService`
@@ -60,3 +60,6 @@ Extras for if you have time:
 - [ ] Implement the `Delete` method of `IStudentService`
 - [ ] Add delete endpoint to the API
 - [ ] Add delete functionality to the frontend
+
+| Start Time | 2024-08-31 10:30:00.000 |
+| Finish Time |  |
