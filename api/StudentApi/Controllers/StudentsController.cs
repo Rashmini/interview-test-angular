@@ -54,5 +54,22 @@ namespace StudentApi.Controllers
 
             return BadRequest(response.Message);
         }
+
+        /// <summary>
+        /// Delete a student
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody]Student student)
+        {
+            var response = await Mediator.Send(new DeleteStudentRequest { Student = student });
+
+            if (response.Success)
+            {
+                return NoContent();
+            }
+            
+            return NotFound(response.Message);
+        }
     }
 }
