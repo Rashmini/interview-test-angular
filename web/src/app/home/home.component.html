@@ -10,6 +10,7 @@
       <th>Email</th>
       <th>Major</th>
       <th>Average Grade</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,9 @@
       <td>{{ student.email }}</td>
       <td>{{ student.major }}</td>
       <td>{{ student.averageGrade }}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="deleteStudent(student)">Delete</button>
+      </td>
     </tr>
   </tbody>
 </table>
