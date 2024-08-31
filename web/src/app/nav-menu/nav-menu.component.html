@@ -27,6 +27,13 @@
           >
             <a class="nav-link text-dark" [routerLink]="['/home']">Home</a>
           </li>
+          <li
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <button class="btn btn-success" [routerLink]="['/add-student']">Add Student</button>
+          </li>
         </ul>
       </div>
     </div>

@@ -37,5 +37,39 @@ namespace StudentApi.Controllers
 
             return reponse.Students;
         }
+
+        /// <summary>
+        /// Add a student
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] Student student)
+        {
+            var response = await Mediator.Send(new AddStudentRequest { Student = student });
+
+            if (response.Success)
+            {
+                return CreatedAtAction(nameof(Post), new { }, response.Student);
+            }
+
+            return BadRequest(response.Message);
+        }
+
+        /// <summary>
+        /// Delete a student
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody]Student student)
+        {
+            var response = await Mediator.Send(new DeleteStudentRequest { Student = student });
+
+            if (response.Success)
+            {
+                return NoContent();
+            }
+            
+            return NotFound(response.Message);
+        }
     }
 }

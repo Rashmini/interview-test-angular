@@ -9,5 +9,7 @@
         public string Email { get; set; }
 
         public string Major { get; set; }
+
+        public double AverageGrade {get; set;}
     }
 }

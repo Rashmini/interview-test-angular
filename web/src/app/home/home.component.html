@@ -9,14 +9,20 @@
       <th>Lastname</th>
       <th>Email</th>
       <th>Major</th>
+      <th>Average Grade</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let student of students">
+    <tr *ngFor="let student of students" [ngClass]="getBootstrapRowStyle(student.averageGrade)">
       <td>{{ student.firstName }}</td>
       <td>{{ student.lastName }}</td>
       <td>{{ student.email }}</td>
       <td>{{ student.major }}</td>
+      <td>{{ student.averageGrade }}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="deleteStudent(student)">Delete</button>
+      </td>
     </tr>
   </tbody>
 </table>
