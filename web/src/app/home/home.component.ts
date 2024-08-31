@@ -31,24 +31,30 @@ export class HomeComponent implements OnInit {
     if (confirmed) {
       this.http.delete(this.baseUrl + 'students', { body: student }).subscribe({
         next: () => {
-          const updatedStudents = this.students.filter(s => s.email !== student.email);
-          this.students = updatedStudents;
+          const newStudentList = this.students.filter(s => s.email !== student.email);
+          this.students = newStudentList;
         },
         error: (error) => {
-          console.error('Error deleting student:', error);
+          console.error('An error occurred while deleting the student.', error);
         }
       });
     }
   }
 
-  getBootstrapRowStyle(grade: number): string {
+  getGradeStyle(grade: number): { [key: string]: string } {
+    let backgroundColor: string;
+
     if (grade >= 80) {
-      return 'table-success';
+      backgroundColor = '#a6e1a6';
     } else if (grade >= 50) {
-      return 'table-warning';
+      backgroundColor = '#ffecb3';
     } else {
-      return 'table-danger';
+      backgroundColor = '#f5c6cb';
     }
+
+    return {
+      'background-color': backgroundColor
+    };
   }
 
   ngOnInit() {}
