@@ -49,7 +49,7 @@ namespace StudentApi.Controllers
 
             if (response.Success)
             {
-                return Ok(response.Message);
+                return CreatedAtAction(nameof(Post), new { }, response.Student);
             }
 
             return BadRequest(response.Message);

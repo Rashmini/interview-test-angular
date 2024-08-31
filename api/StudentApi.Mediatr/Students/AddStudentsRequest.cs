@@ -16,6 +16,7 @@ namespace StudentApi.Mediatr.Students
     {
         public bool Success { get; set; }
         public string Message { get; set; }
+        public Student Student { get; set; }
     }
 
     public class AddStudentHandler : IRequestHandler<AddStudentRequest, AddStudentResponse>
@@ -29,13 +30,30 @@ namespace StudentApi.Mediatr.Students
 
         public Task<AddStudentResponse> Handle(AddStudentRequest request, CancellationToken cancellationToken)
         {
-            // Add a student
-            var success = _studentsService.AddStudent(request.Student);
+            var student = request.Student;
+
+            // Check if all required fields are present
+            if (student == null || 
+                string.IsNullOrEmpty(student.FirstName) ||
+                string.IsNullOrEmpty(student.LastName) ||
+                string.IsNullOrEmpty(student.Email) ||
+                string.IsNullOrEmpty(student.Major))
+            {
+                return Task.FromResult(new AddStudentResponse
+                {
+                    Success = false,
+                    Message = "Invalid student data. All fields are required."
+                });
+            }
+
+            // Add student
+            var success = _studentsService.AddStudent(student);
 
             var response = new AddStudentResponse
             {
                 Success = success,
-                Message = success ? "Student added successfully!" : "Failed to add student!"
+                Message = success ? "Student added successfully!" : "Failed to add student!",
+                Student = success ? student : null
             };
 
             return Task.FromResult(response);
