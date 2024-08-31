@@ -42,10 +42,10 @@ namespace StudentApi.Services
         /// </summary>
         /// <param name="student"></param>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
         public bool AddStudent(Student student)
-        {
-            throw new NotImplementedException();
+        {            
+            students.Add(student);
+            return true;
         }
 
         /// <summary>
