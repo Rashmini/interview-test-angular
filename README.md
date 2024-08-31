@@ -50,7 +50,7 @@ You may if you prefer use your preferred frontend technology, if you are unfamil
 - [x] Add a page to the frontend to allow students to be added
 - [x] Add an endpoint to the API to allow students to be added
 - [x] Implement the `Add` method of the `IStudentService`
-- [ ] Style the display of the average grade so that it has three colorations:
+- [x] Style the display of the average grade so that it has three colorations:
   - Green: average grade greater than 80%
   - Orange: average grade less than 80% and greater than 50%
   - Red: average grade less than 50%
